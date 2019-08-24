@@ -93,23 +93,22 @@ module.exports = {
 # 配置好后 在测试的时候 用console.log 报错error: Unexpected console statement (no-console)
 解决办法
 https://www.jianshu.com/p/bfc7e7329cff
-关闭eslint 在package.json中添加设置  "no-console": "off"
+关闭eslint 在package.json中添加设置  "no-console": "off"(json中部可以有注释 否则编译不通过)
 ```
   "eslintConfig": {
-     "root": true,
-     "env": {
-       "node": true
-     },
-     "extends": [
-       "plugin:vue/essential",
-       "@vue/standard"
-     ],
-     "rules": {
-       "indent": [1, 4],
-       "no-console": "off" 
-     },
-     "parserOptions": {
-       "parser": "babel-eslint"
-     }
-   },
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {
+      "no-console": "off"
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
 ```
