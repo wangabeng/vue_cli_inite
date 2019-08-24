@@ -112,3 +112,27 @@ https://www.jianshu.com/p/bfc7e7329cff
     }
   },
 ```
+# 安装sass/scss（是sass的升级版本）
+```
+npm install node-sass --save-dev //安装node-sass 
+npm install sass-loader --save-dev //安装sass-loade
+```
+
+# 初始化git本地项目并推送到远程
+1 远程建立仓库 readme为空 并复制地址  
+2 进入项目目录 
+```
+// 初始化
+git init
+// 关联地址
+git remote add origin git@github.com:XXXX/XXXXX.git
+// 重新设置地址
+git remote set-url origin https://gitee.com/name/project.git 
+
+//
+git add .
+git commit -m "msg"
+// 首次推送到远程仓库 必须指明推送的分支
+git push --set-upstream origin master
+
+````
