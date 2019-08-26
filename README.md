@@ -136,3 +136,12 @@ git commit -m "msg"
 git push --set-upstream origin master
 
 ````
+
+# 当路由开启history模式 vue-router 配置404报错 如果只配置一级路由的404 不会报错 如果输入二级路由 浏览器就会报错
+https://forum.vuejs.org/t/uncaught-syntaxerror-unexpected-token/32862
+开始history模式 需要后端配合
+```
+刷新页面出现空白 估计是后端路由识别不了 譬如https://www.youproject.com/main/1 刷新时后端没找到这个路径，配置一下后端 找不到的时候重定向到入口的index.html 前端路由就能正常使用了
+
+参考官方文档https://router.vuejs.org/zh-cn/essentials/history-mode.html
+```
