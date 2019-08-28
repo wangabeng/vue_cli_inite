@@ -152,12 +152,18 @@ https://forum.vuejs.org/t/uncaught-syntaxerror-unexpected-token/32862
     <script src='<%= BASE_URL %>selection.js'></script>
 ```
 
-# vue-cli3中如何引入bootstrap和jquery
+# vue-cli3中如何引入bootstrap和jquery (也可以一次性安装 npm install jquery bootstrap@3 popper.js --save)
 ## 1 安装jQuery  
 bootstrap是基于jQuery的，在使用之前我们先安装一下jQuery包 又因为jquery以来popper.js，所以在安装jquery之前先安装popper
 ```
+npm install popper.js --save
 npm install jquery -S
 ```
+然后在main.js中引入jquery作为全局变量
+```
+import $ from 'jquery'
+```
+
 ```
 /*
 *Vue-CLI项目的核心配置文件
