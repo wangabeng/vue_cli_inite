@@ -145,3 +145,9 @@ https://forum.vuejs.org/t/uncaught-syntaxerror-unexpected-token/32862
 
 参考官方文档https://router.vuejs.org/zh-cn/essentials/history-mode.html
 ```
+# vue-cli3 中在index.html中引入js css文件方法
+把所有css js文件放入public文件夹下 引入方式 
+```
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <script src='<%= BASE_URL %>selection.js'></script>
+```
