@@ -151,3 +151,54 @@ https://forum.vuejs.org/t/uncaught-syntaxerror-unexpected-token/32862
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <script src='<%= BASE_URL %>selection.js'></script>
 ```
+
+# vue-cli3中如何引入bootstrap和jquery
+## 1 安装jQuery  
+bootstrap是基于jQuery的，在使用之前我们先安装一下jQuery包 又因为jquery以来popper.js，所以在安装jquery之前先安装popper
+```
+npm install jquery -S
+```
+```
+/*
+*Vue-CLI项目的核心配置文件
+*/
+const webpack = require("webpack");
+
+module.exports = {
+ configureWebpack: {
+   plugins: [
+     new webpack.ProvidePlugin({
+       $: "jquery",
+       jQuery: "jquery",
+       "window.jQuery": "jquery",
+       Popper: ["popper.js", "default"]
+     })
+   ]
+ }
+};
+```
+
+## 2 安装bootstrap
+接下来我们安装bootstrap依赖，这里的@3是安装bootstrap3.x版本，不喜欢这个版本的小伙伴也可以安装最新版。
+```
+npm install bootstrap@4 -S
+```
+在main.js中导入bootstrap
+```
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router'
+import store from './store'
+// 导入bootstrap
+import "bootstrap"
+import "bootstrap/dist/css/bootstrap.css"
+
+
+Vue.config.productionTip = false
+
+new Vue({
+router,
+store,
+render: h => h(App)
+}).$mount('#app')
+```
