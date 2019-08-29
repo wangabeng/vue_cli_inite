@@ -208,3 +208,5 @@ store,
 render: h => h(App)
 }).$mount('#app')
 ```
+# 解决vue-cli3打包代码后，上线服务器后白屏问题及路由跳转错误问题
+路由模式为mode: 'history',  打包后路由 /helloworld  变为http://localhost:3000/helloworld 如果直接从D盘打开 会出现路径错误。所以，如果用history模式，必须要配合服务器设置。否则，就不要用history模式。
