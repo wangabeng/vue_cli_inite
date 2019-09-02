@@ -232,3 +232,13 @@ abstract: 支持所有 JavaScript 运行环境，如 Node.js 服务器端。如�
 终于弄明白了，如果使用history模式上线，必须要服务端在服务器上有对应的模式才能使用history（看上面链接），如果服务器上没有配置，可以先使用默认的hash；
 当然个人建议还是使用history模式，因为这样链接看起来要美观些
 ```
+# 在vue-cli中使用vuex
+```
+ import store from '@/store/index'
+
+ // 获取state的某个属性
+ store.getters.token
+
+ // 调用actions中的方法
+ store.dispatch('setToken', 'abc');
+```
