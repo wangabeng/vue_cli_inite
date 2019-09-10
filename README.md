@@ -242,3 +242,16 @@ abstract: 支持所有 JavaScript 运行环境，如 Node.js 服务器端。如�
  // 调用actions中的方法
  store.dispatch('setToken', 'abc');
 ```
+# 解决点击相同路由地址报错的问题
+```
+vue-router.esm.js?8c4f:2007 Uncaught (in promise) NavigationDuplicated {_name: "NavigationDuplicated", name: "NavigationDuplicated"}
+```
+解决方方法 在定义router的时候 增加一段
+```
+import Router from 'vue-router'
+
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+```
