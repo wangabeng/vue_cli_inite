@@ -255,3 +255,6 @@ Router.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err)
 }
 ```
+# axios跨域问题
+Vue使用Axios实现http请求以及解决跨域问题
+https://www.jianshu.com/p/0fbaf45340e4
