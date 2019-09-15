@@ -258,3 +258,16 @@ Router.prototype.push = function push(location) {
 # axios跨域问题
 Vue使用Axios实现http请求以及解决跨域问题
 https://www.jianshu.com/p/0fbaf45340e4
+
+# 请问我用vue做的分页，点击当前页跳转路由，然后返回如何记住当前页？
+https://segmentfault.com/q/1010000010215881
+```
+<keep-alive>
+  <router-view v-if="$route.meta.keepAlive"></router-view>
+</keep-alive>
+<router-view v-if="!$route.meta.keepAlive"></router-view>
+然后在路由上,需要keep-alive的地方加一个
+meta: {
+keepAlive: true
+}
+```
