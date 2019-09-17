@@ -271,3 +271,21 @@ meta: {
 keepAlive: true
 }
 ```
+# 路由变化页面数据不刷新问题
+https://www.jianshu.com/p/a0ee62659201
+```
+ watch: {
+// 方法1      
+'$route'(to, from) { //监听路由是否变化        
+   if(this.$route.params.articleId){// 判断条件1  判断传递值的变化         
+//获取文章数据
+    }
+ }      
+//方法2     
+'$route'(to, from) {        
+  if(to.path == "/page") {    /// 判断条件2  监听路由名 监听你从什么路由跳转过来的           
+    this.message = this.$route.query.msg     
+   }
+ }      
+}
+```
