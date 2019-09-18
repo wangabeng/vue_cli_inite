@@ -289,3 +289,6 @@ https://www.jianshu.com/p/a0ee62659201
  }      
 }
 ```
+# 监听路由变化后出现执行2次的情况 
+原因在于 在路由上添加了keep-alive 需要用排除或添加的方法 把不需要路由缓存的地方 排除掉
+https://www.jianshu.com/p/4b55d312d297
