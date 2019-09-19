@@ -309,3 +309,36 @@ npm install vuex --save
 npm install sass-loader --save-dev 
 npm install node-sass --save-dev
 ```
+
+# vue2修改浏览器显示title
+一、配置路由器的时候添加如下项 meta
+```
+routes: [
+    {
+      path: '/',
+      name: 'login',
+      component: Login,
+      meta: {
+        title: '登录'
+      }
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: Home,
+      meta: {
+        title: '首页'
+      }
+    }
+  ]  
+```
+二、在main.js中写全局路由钩子
+// 路由钩子
+```
+router.beforeEach((to, from, next) => {
+  if (to.meta.title) {
+    document.title = to.meta.title
+  }
+  next()
+})
+```
