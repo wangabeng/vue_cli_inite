@@ -342,3 +342,16 @@ router.beforeEach((to, from, next) => {
   next()
 })
 ```
+
+# 使用vue+typescript构建项目，引入weixin-js-sdk后，不能用里面的方法？
+1 安装
+```
+1、npm install --save-dev weixin-js-sdk
+
+2、import wx from 'weixin-js-sdk';
+```
+2 console.log(wx) 值为undefined
+解决
+```
+const wx = window['wx']
+```
