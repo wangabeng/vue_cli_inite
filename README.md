@@ -355,3 +355,14 @@ router.beforeEach((to, from, next) => {
 ```
 const wx = window['wx']
 ```
+
+# 内网穿透访问Vue项目的时候出现Invalid Host header解决办法
+vue-cli3中:  
+```
+// vue.config.js文件中
+module.exports = {
+  devServer: {
+    disableHostCheck: true
+  }
+}
+```
