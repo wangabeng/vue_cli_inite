@@ -292,3 +292,20 @@ https://www.jianshu.com/p/a0ee62659201
 # 监听路由变化后出现执行2次的情况 
 原因在于 在路由上添加了keep-alive 需要用排除或添加的方法 把不需要路由缓存的地方 排除掉
 https://www.jianshu.com/p/4b55d312d297
+
+# vue项目安装汇总
+```
+// jquery
+npm install popper.js --save
+npm install jquery --save
+
+// vue-router
+npm install vue-router --save
+
+// vue-x
+npm install vuex --save
+
+// 安装sass
+npm install sass-loader --save-dev 
+npm install node-sass --save-dev
+```
