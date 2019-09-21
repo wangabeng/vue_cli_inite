@@ -366,3 +366,9 @@ module.exports = {
   }
 }
 ```
+# swiper刷新页面异常
+在Swiper的配置项里加上这2个就可以  
+observer: true,  
+observeParents: true,  
+
+我也是参考别人的，但大家都是转载来转载去，出处不详了 = = 具体可以看下这2个api的官方文档
