@@ -417,3 +417,5 @@ this.$axios({
     console.log(req)
 })
 ```
+# vue axios拦截器 配合elementUI loading 讲解 很详细
+https://www.cnblogs.com/zhoulifeng/p/9858605.html
