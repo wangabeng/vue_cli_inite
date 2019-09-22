@@ -419,3 +419,9 @@ this.$axios({
 ```
 # vue axios拦截器 配合elementUI loading 讲解 很详细
 https://www.cnblogs.com/zhoulifeng/p/9858605.html
+
+# Vue项目中实现用户登录及token验证
+https://www.cnblogs.com/web-record/p/9876916.html
+
+# 前后端分离的，不可避免的就产生了跨域问题，导致Authorization始终无法添加到请求头中去
+https://blog.csdn.net/why15732625998/article/details/79348718
