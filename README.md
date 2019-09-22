@@ -372,3 +372,31 @@ observer: true,
 observeParents: true,  
 
 我也是参考别人的，但大家都是转载来转载去，出处不详了 = = 具体可以看下这2个api的官方文档
+
+# 每次用axios发送请求 就失败，但是用ajax发送 就成功
+原因 https://www.cnblogs.com/yiyi17/p/9409249.html
+axios发送请求 默认会把参数转成json的格式，ajax就以fomdata的形式发的
+解决办法  
+网上有很多方案说使用 
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'; 
+或者 
+{headers:{'Content-Type':'application/x-www-form-urlencoded'}} 
+我试了一下，其实这样还是不行的 
+【还需要额外的操作，（我们要将参数转换为query参数）】 
+引入 qs ，这个库是 axios 里面包含的，不需要再下载了。
+```
+import Qs from 'qs'
+let data = {
+    "username": "admin",
+    "pwd": "admin"
+}
+
+axios({
+    headers: {
+        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+    },
+    method: 'post',
+    url: '/api/lockServer/search',
+    data: Qs.stringify(data)
+})
+```
