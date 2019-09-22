@@ -400,3 +400,20 @@ axios({
     data: Qs.stringify(data)
 })
 ```
+# vue-axios中post和get携带参数和token
+```
+this.$axios({
+    method:'GET',
+    url:`/scihua/webapp/designs/delete?id=${id}`,　　　　　　　　//利用了字符串模板来携带id
+    headers:{
+            'token':window.localStorage.getItem('token')　　　　//由于是多页面应用所以token存储在本地localStorage中
+        }
+},
+
+).then(res=>{
+    console.log(res)
+    this.inlist()
+}).catch(req=>{
+    console.log(req)
+})
+```
