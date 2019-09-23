@@ -425,3 +425,23 @@ https://www.cnblogs.com/web-record/p/9876916.html
 
 # 前后端分离的，不可避免的就产生了跨域问题，导致Authorization始终无法添加到请求头中去
 https://blog.csdn.net/why15732625998/article/details/79348718
+
+# 设置headers 报错Request header field Content-Type is not allowed by Access-Control-Allow-Headers
+我要自定义一些参数放在headers里面，试了好多方法都不行
+比如：http://ask.dcloud.net.cn/question/8596这里的很多个方式
+http://ask.dcloud.net.cn/article/13026的方式
+后来比较明确的报错Request header field “我自定义的key” is not allowed by Access-Control-Allow-Headers in preflight response.
+又去搜了一下找到https://www.cnblogs.com/caimuqing/p/6733405.html，结果发现是后端需要把要传到后端的headers里面的key加入到response
+```
+// TODO 支持跨域访问  
+        response.setHeader("Access-Control-Allow-Origin", "*");  
+        response.setHeader("Access-Control-Allow-Credentials", "true");  
+        response.setHeader("Access-Control-Allow-Methods", "*");  
+        response.setHeader("Access-Control-Allow-Headers", "Content-Type,Access-Token");//这里“Access-Token”是我要传到后台的内容key  
+        response.setHeader("Access-Control-Expose-Headers", "*");  
+
+        if (request.getMethod().equals("OPTIONS")) {  
+            HttpUtil.setResponse(response, HttpStatus.OK.value(), null);  
+            return;  
+        }
+```
