@@ -488,3 +488,7 @@ console.log(typeof(getNameDataJSON));  //object类型
 
  
 ```
+
+# vue打包的时候报错
+Vue-cli3 WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB)
+https://www.cnblogs.com/tonnytong/p/10764454.html
