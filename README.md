@@ -445,3 +445,46 @@ http://ask.dcloud.net.cn/article/13026的方式
             return;  
         }
 ```
+# localStorage - 本地存储（添加、读取、修改、删除、JSON格式存储）
+https://blog.csdn.net/Janus_lian/article/details/83412964
+```
+window.localStorage.setItem('a','123456')
+//存入的是number类型，实际存储在localStorage的是string类型，因为localStorage只支持string类型存储
+
+
+window.localStorage.getItem("a");
+console.log(typeof(window.localStorage.getItem("a"))); //String
+
+window.localStorage.setItem('a','新的值')
+
+//清除所有localStorage
+window.localStorage.clear();
+ 
+//清除某个键值对
+window.localStorage.removeItem("a");
+
+let storage = window.localStorage;
+for(let i = 0 ; i < storage.length; i++){
+    console.log(storage.key(i));
+}
+
+
+//json格式存取
+
+// 存储 json -》 字符串
+var storage=window.localStorage;
+var data={
+    name:'tom',
+    hobby:'program'
+};
+var nameData = JSON.stringify(data);
+storage.setItem("nameData",nameData);
+
+// 读取 string -> json
+let getNameData = window.localStorage.getItem("nameData");
+console.log(typeof(getNameData)); //sting类型
+let getNameDataJSON = JSON.parse(getNameData);
+console.log(typeof(getNameDataJSON));  //object类型
+
+ 
+```
