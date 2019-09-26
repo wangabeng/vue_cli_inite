@@ -494,3 +494,4 @@ Vue-cli3 WARNING in asset size limit: The following asset(s) exceed the recommen
 https://www.cnblogs.com/tonnytong/p/10764454.html
 
 # vue main.js设置全局变量
+https://www.cnblogs.com/kewenxin/p/8619240.html
