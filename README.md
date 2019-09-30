@@ -495,3 +495,8 @@ https://www.cnblogs.com/tonnytong/p/10764454.html
 
 # vue main.js设置全局变量
 https://www.cnblogs.com/kewenxin/p/8619240.html
+
+# 理解 vue-router的beforeEach无限循环的问题
+调用 next()方法才能进入下一个路由，否则的如果写了beforeEach方法，但是没有调用next()方法的话，页面会空白，不会跳转到任何页面的。
+如果已经手动跳转页面，就无需调用next了 否则 就出现重复刷新页面的问题
+https://www.cnblogs.com/tugenhua0707/p/10125535.html
